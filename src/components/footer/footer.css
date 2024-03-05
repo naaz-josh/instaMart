@@ -1,0 +1,44 @@
+ .footer {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background-color: var(--primary-color);
+   
+}
+.quick-links_title{
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.783);
+    font-size: 1.1rem;
+  
+}
+.footer_quick-links ul li{
+    background: transparent !important;
+}
+.link_title{
+    color:rgba(255, 255, 255, 0.678);
+    font-size: 1.1rem;
+}
+.contact_title{
+    color:rgba(255, 255, 255, 0.678);
+    font-size: 1.1rem;
+}
+.footer_contact ul li{
+    background: transparent !important;
+}
+.footer_useful_links ul li{
+    color:rgba(255, 255, 255, 0.678);
+    background: transparent !important;
+}
+.footer_quick-links ul li a{
+   color:rgba(255, 255, 255, 0.678)
+}
+.footer_contact li{
+    color: rgba(255, 255, 255, 0.678)
+}
+.footer_contact li span{
+   font-size: 1.2rem;
+
+}
+.footer_contact {
+    background: transparent !important;
+}
+
