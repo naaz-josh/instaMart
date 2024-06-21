@@ -34,19 +34,47 @@
     cursor: pointer;
 }
 .nav__icons{
+    position: relative;
     align-items: center;
     column-gap: 1.2rem;
     display: flex;
 }
 .nav__icons span i{
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     color: var(--primary-color);
 }
-.nav__icons span img{
+/* .nav__icons span img{
+    width:30px;
+    height:30px
+} */
+.nav__icons .profile img{
     height: 30px;
     width:30px;
-    color: var(--primary-color)
+    cursor: pointer;
+    border-radius: 50%;
 }
+.nav_icons .profile{
+    position: relative;
+    z-index:9;
+
+}
+.profile_actions{
+    position: absolute;
+    top: 98%;
+    left:0;
+    width: 150px;
+    z-index: 10;
+    padding: 15px;
+    align-items: center;
+    flex-direction: column;
+    background:pink;
+    line-height:30px;
+    cursor: pointer;
+    /* display: none;
+    cursor: pointer; */
+}
+
+
 .mobile__menu{
     font-size: 1.3rem;
     display: none;
@@ -55,32 +83,33 @@
 .nav_active{
     font-weight: 700 !important;
 }
-.cart__icons,.fav__icon{
+.cart__icons,.fav__icon,.notification_icon{
     position: relative;
    
 
     
 }
 .badge{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: absolute;
-    top: 25%;
-    right: -8%;
-    width: 15px;
-    height: 15px;
+    top: 18%;
+    right: -10%;
+    width: 18px;
+    height: 18px;
     display: flex;
     text-align: center;
-    background-color: var(--primary-color);
-  
     color: white;
+    background-color: red;
     border-radius: 50%;
-    font-size: 0.6rem;
-
+    font-size: 0.9rem;
     font-weight: 600;
     z-index: 10;
 }
 
-@media only screen and (max-width:768px) {
-    .navigations{
+/* @media only screen and (max-width:768px) {
+    .navigation{
         position: fixed;
         top:0 ;
         left:0;
@@ -106,4 +135,4 @@
     .mobile__menu{
         display: block;
     }
-}
+} */

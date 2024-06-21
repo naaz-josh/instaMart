@@ -14,7 +14,7 @@ describe('Login Form', () => {
     test('validates email field', async () => {
         render(<BrowserRouter><Login /></BrowserRouter>);
         const emailInput = screen.getByPlaceholderText('Enter Email..');
-        fireEvent.change(emailInput, { target: { value: 'naaz145265gmail' } });
+        fireEvent.change(emailInput, { target: { value: 'chetan12356+@gmail.com' } });
         fireEvent.blur(emailInput);
         await waitFor(() => {
           expect(screen.getByText('*Invalid email address')).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe('Login Form', () => {
     test('validates password field', async () => {
         render(<BrowserRouter><Login /></BrowserRouter>);
         const passwordInput = screen.getByPlaceholderText('Enter your password here...');
-        fireEvent.change(passwordInput, { target: { value: 'heythere' } });
+        fireEvent.change(passwordInput, { target: { value: 'Chetan@0' } });
         fireEvent.blur(passwordInput);
         await waitFor(() => {
           expect(screen.getByText('*Password must be at least 8 characters')).toBeInTheDocument();
@@ -35,15 +35,15 @@ describe('Login Form', () => {
         const passwordInput = screen.getByPlaceholderText('Enter your password here...');
         const submitButton = screen.getByTestId('login');
     
-        fireEvent.change(emailInput, { target: { value: 'test@gmail.com' } });
-        fireEvent.change(passwordInput, { target: { value: 'Strong@123' } });
+        fireEvent.change(emailInput, { target: { value: 'chetan123+@gmail.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'Chetan@0987' } });
         fireEvent.click(submitButton);
       });
-      test('shows success toast when form is submitted successfully',() => {
+      test('shows success toast when form is submitted successfully',async () => {
        
     
-        waitFor(() => {
-          expect(screen.getByText('You are Logged In !')).toBeInTheDocument();
+      await  waitFor(() => {
+          expect(screen.getByText('Successfully Logged In')).toBeInTheDocument();
         });
       });
 })

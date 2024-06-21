@@ -8,26 +8,28 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../redux/slices/cartSlice";
 
 import '../styles/checkout.css'
+import useAuth from '../custom-hooks/useAuth'
 
 const Checkout = () => {
   const totalQuanity =useSelector(state=>state.cart.totalQuanity)
   const totalAmount= useSelector(state=>state.cart.totalAmount)
-   const history = useNavigate();
+   const navigate = useNavigate();
+   const {currentUser}=useAuth();
    const dispatch=useDispatch()
   
   const handlePlaceOrder=()=>{
    
-    const user= JSON.parse(localStorage.getItem('user'))
-    if(user){
+    // const user= JSON.parse(localStorage.getItem('user'))
+    if(currentUser){
 
     debugger
       toast.success("Your order is Placed !")
       dispatch(cartActions.clearCart())
-      history('/home')
+      navigate('/home')
     }
     else{
       
-      history('/login')
+      navigate('/login')
       toast.warn('You need to Login In first to place an order')
     }
   }

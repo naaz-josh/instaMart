@@ -8,10 +8,10 @@ const Clock = () => {
   const [minutes,setMinutes]=useState()
   const [seconds,setSeconds]=useState()
   
-  let interval=useRef()
-  
+let interval =useRef()
+console.log('int',interval)
   const StartTimer=()=>{
-  const destination= new Date('Feb 30 , 2024 00:00:00').getTime()
+  const destination= new Date('March 30 , 2024 00:00:00').getTime()
     interval = setInterval(() => {
       const now= new Date().getTime()
       const difference=destination-now
@@ -23,8 +23,11 @@ const Clock = () => {
     const minutes=Math.floor(difference %(1000*60*60)/(1000*60))
 
     const seconds=Math.floor(difference %(1000*60)/1000)
-   
-    if(destination<0){clearInterval(interval.current)}
+ 
+    if(destination<0){
+      clearInterval(interval.current)
+    }
+    
 
     else{
       setDay(days)
@@ -41,6 +44,10 @@ const Clock = () => {
     StartTimer()
     return clearInterval(interval.current)
   },[])
+
+
+
+
   return (
  <div className="clock_wrapper d-flex align-items-center gap-3">
   <div className="clock_data d-flex align-items-center gap-3">

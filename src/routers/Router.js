@@ -6,6 +6,7 @@ import Login from '../pages/Login.jsx'
 import ProductDetails from '../pages/ProductDetails.jsx'
 import Signup from '../pages/Signup.jsx'
 import Shop from '../pages/Shop.jsx'
+import ProtectedRoutes from './ProtectedRoute.js'
 
 
 
@@ -17,7 +18,7 @@ const Router = () => {
         <Route path='home' element={<Home></Home>}></Route>
         <Route path='shop' element={<Shop/>}></Route>
         <Route path='cart' element={<Cart/>}></Route>
-        <Route path='checkout' element={<Checkout/>}></Route>
+        <Route path='checkout' element={<ProtectedRoutes><Checkout></Checkout></ProtectedRoutes>}></Route>
         <Route path='login' element={<Login/>}></Route>
         <Route path='shop/:id' element={<ProductDetails/>}></Route>
         <Route path='sign-up' element={<Signup/>}></Route>

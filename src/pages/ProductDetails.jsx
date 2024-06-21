@@ -15,6 +15,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch()
   const [tab, setTab] = useState("desc");
   const [rating,setRating]=useState(null)
+
   const reviewUser=useRef('')
   const reviewMsg=useRef('')
   
@@ -31,8 +32,11 @@ const ProductDetails = () => {
     description,
     shortDesc,
   } = product;
+
   console.log("product-->" + product);
+
   const relatedProducts=products.filter((item)=>item.category===category)
+
   const submitHandler=(e)=>{
     e.preventDefault()
     const reviewUserName=reviewUser.current.value
@@ -43,7 +47,9 @@ const ProductDetails = () => {
       rating:rating
     }
     console.log(reviewObj)
+    toast.success('Review Submitted')
   }
+
   const addToCart=()=>{
       dispatch(cartActions.addItem({
         id,

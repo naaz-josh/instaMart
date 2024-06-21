@@ -1,24 +1,19 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-import { Col,Row} from "reactstrap";
-
+import {Row} from "reactstrap";
+import {SortableContext, horizontalListSortingStrategy} from '@dnd-kit/sortable'
 const ProductList = ({data}) => {
-   
-  return (
-    <Row>{
+  console.log(data)
+   return (
+    <SortableContext items={data} strategy={horizontalListSortingStrategy}>
+      <Row>{
         data?.map((item,index)=>{
-            
-    
-    return <ProductCard key={index} item={item}></ProductCard>
+          return <ProductCard key={item.id} item={item} id={item.id}></ProductCard>
         })
     }</Row>
-   
-
- 
-
-  
-   
-  )
+    </SortableContext>
+    
+  ) 
 }
 
 export default ProductList

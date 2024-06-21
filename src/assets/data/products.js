@@ -34,6 +34,7 @@ const products = [
     productName: "Stone and Beam Westview ",
     imgUrl: productImg01,
     category: "sofa",
+    status:"Trending Products",
     price: 193,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -53,6 +54,7 @@ const products = [
     productName: "Rivet Bigelow Modern ",
     imgUrl: productImg02,
     category: "sofa",
+    status:"Best Sales",
     price: 253,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -74,6 +76,7 @@ const products = [
   {
     id: "03",
     productName: "Amazon Brand Modern Sofa",
+    status:"Best Sales",
     imgUrl: productImg03,
     category: "sofa",
     price: 173,
@@ -97,6 +100,7 @@ const products = [
     id: "26",
     productName: "Rivet Bigelow Modern ",
     imgUrl: productImg02,
+    status:"Popular Products",
     category: "sofa",
     price: 253,
     shortDesc:
@@ -120,7 +124,9 @@ const products = [
     productName: "Fllufy Sheep Sofa",
     imgUrl: productImg04,
     category: "sofa",
+    
     price: 163,
+    status:"Trending Products",
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -143,6 +149,7 @@ const products = [
     productName: "Faux Velvet Sofa",
     imgUrl: productImg05,
     category: "sofa",
+    status:"Best Sales",
     price: 163,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -165,6 +172,7 @@ const products = [
     id: "06",
     productName: "Fllufy Sheep Sofa",
     imgUrl: productImg06,
+    status:"Popular Products",
     category: "sofa",
     price: 163,
     shortDesc:
@@ -188,6 +196,7 @@ const products = [
     productName: "Sakarias Armchair",
     imgUrl: productImg07,
     category: "chair",
+    status:"Trending Products",
     price: 99,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -211,6 +220,7 @@ const products = [
     productName: "Modern Arm Sofa",
     imgUrl: productImg007,
     category: "sofa",
+    status:"Popular Products",
     price: 173,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -234,6 +244,7 @@ const products = [
     productName: "Baltsar Chair",
     imgUrl: productImg08,
     category: "chair",
+    status:"Best Sales",
     price: 89,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -257,6 +268,7 @@ const products = [
     productName: "Helmar Chair",
     imgUrl: productImg09,
     category: "chair",
+    status:"New Arrival",
     price: 112,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -280,6 +292,7 @@ const products = [
     productName: "Apple iPhone 12 Pro",
     imgUrl: productImg13,
     category: "mobile",
+    status:"Best Sales",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -302,6 +315,7 @@ const products = [
     productName: "Sakarias Armchair",
     imgUrl: productImg10,
     category: "chair",
+    status:"Popular Products",
     price: 99,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -324,6 +338,7 @@ const products = [
     productName: "Apple iPhone 12 Max",
     imgUrl: productImg14,
     category: "mobile",
+    status:"New Arrival",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -347,6 +362,7 @@ const products = [
     productName: "Realme 8",
     imgUrl: productImg15,
     category: "mobile",
+    status:"Trending Products",
     price: 599,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -370,6 +386,7 @@ const products = [
     productName: "One Plus Nord",
     imgUrl: productImg16,
     category: "mobile",
+    status:"Best Sales",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -393,6 +410,7 @@ const products = [
     productName: "Apple iPhone 13 Pro",
     imgUrl: productImg17,
     category: "mobile",
+    status:"Best Sales",
     price: 899,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -416,6 +434,7 @@ const products = [
     productName: "Samsung Galaxy S22",
     imgUrl: productImg18,
     category: "mobile",
+    status:"New Arrival",
     price: 699,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -439,7 +458,9 @@ const products = [
     productName: "Rolex Watch",
     imgUrl: productImg19,
     category: "watch",
+    status:"New Arrival",
     price: 299,
+    
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -462,6 +483,7 @@ const products = [
     productName: "Timex Easy Reader Watch",
     imgUrl: productImg20,
     category: "watch",
+    status:"New Arrival",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -485,6 +507,7 @@ const products = [
     productName: "Rolex Watch",
     imgUrl: productImg21,
     category: "watch",
+    status:"Best Sales",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -508,6 +531,7 @@ const products = [
     productName: "Apple Watch",
     imgUrl: productImg22,
     category: "watch",
+    status:"New Arrival",
     price: 399,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -531,6 +555,7 @@ const products = [
     productName: "Beat Studio Wireless",
     imgUrl: productImg23,
     category: "wireless",
+    status:"New Arrival",
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -554,6 +579,7 @@ const products = [
     productName: "Beat EP Headphones",
     imgUrl: productImg25,
     category: "wireless",
+    status:"New Arrival",
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",

@@ -37,7 +37,11 @@ const Shop = () => {
   const handleSearch=e=>{
     const searchItem=e.target.value
     console.log(searchItem)
-    const SearchedProducts=products.filter(item=>item.category.toLowerCase().includes(searchItem.toLowerCase()))
+    const SearchedProducts=products.filter(item=>{
+    const matchesCategory = item.category.toLowerCase().includes(searchItem);
+    const matchesTitle = item.productName.toLowerCase().includes(searchItem);
+    return matchesCategory || matchesTitle;
+    })
     setProductData(SearchedProducts)
   }
   return (
@@ -58,7 +62,7 @@ const Shop = () => {
             </select>
           </div>
          </Col>
-         <Col lg="3" md="6" className='text-end'>
+         {/* <Col lg="3" md="6" className='text-end'>
          <div className="filter_widget ">
             <select >
               <option >Sort By</option>
@@ -67,7 +71,7 @@ const Shop = () => {
            
             </select>
           </div>
-         </Col>
+         </Col> */}
          <Col lg="6" md="12">
           <div className="search_box">
           <input type="text" placeholder='Search...' onChange={handleSearch}></input>

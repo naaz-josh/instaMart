@@ -10,6 +10,11 @@ import ProductList from "../components/UI/ProductList";
 import products from "../assets/data/products";
 import counterImg from '../assets/images/counter-timer-img.png'
 import Clock from "../components/UI/Clock";
+import {DndContext, closestCorners} from '@dnd-kit/core'
+import { arrayMove } from "@dnd-kit/sortable";
+
+
+
 
 
 
@@ -32,7 +37,7 @@ const Home = () => {
       setmobileProducts(filteredmobileProducts)
       const filteredwireLessProducts=products.filter((product)=> product.category==="wireless")
       setwirelessProducts(filteredwireLessProducts)
-      const filteredpopularProducts=products.filter((product)=> product.category==="watch")
+     const filteredpopularProducts=products.filter((product)=> product.category==="watch")
       setpopularProducts(filteredpopularProducts)
 
   },[])
@@ -44,6 +49,23 @@ const Home = () => {
     // setBestSalesData(filteredBestSales)
   },[])
   console.log(bestSales)
+  const handleDragStart=(event)=>{
+
+  }
+  const getProductPosition= id=> Trendingdata.findIndex(data=>data.id===id)
+  const handleDragEnd=(event)=>{
+     console.log(event)
+      const {active,over}= event
+      if(active.id===over.id) return;
+      setTrendingData(data=>{
+          const originalPos=getProductPosition(active.id)
+          const newPos=getProductPosition(over.id)
+          return arrayMove(Trendingdata,originalPos,newPos)
+      })
+  }
+  const handleDragMove=(event)=>{
+
+  }
   return (
     <>
       <section className="hero_section">
@@ -71,8 +93,13 @@ const Home = () => {
         </Container>
        
       </section>
+      
       <Service></Service>
+     
+      
       <section className="trending_products">
+        <DndContext collisionDetection={closestCorners} onDragStart={handleDragStart} onDragMove={handleDragMove} onDragEnd={handleDragEnd}>
+        
         <Container>
           <Row>
             <Col lg="12" md="4"className="text-center" >
@@ -81,10 +108,14 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
+        </DndContext>
+        
       </section>
+      
       <section className="Best_Sales">
         <Container>
         <h2 className="section_title text-center">Best Sales</h2>
+       
        
                 <ProductList data={bestSales}></ProductList>
         
@@ -126,7 +157,7 @@ const Home = () => {
         <Container>
          <Row>
          <Col lg="12" md="4"className="text-center mb-5" >
-                <h2 className="section_title">New Arrivals</h2>
+                <h2 className="section_title">Popular Products</h2>
                 <Col>
                 
                 <ProductList data={popularProducts}></ProductList></Col>

@@ -1,15 +1,25 @@
 import React from "react";
 // import productImg from "../assets/images/arm-chair-01.jpg";
 import "../../styles/productCard.css";
-import { Col, Row } from "reactstrap";
+import { Col } from "reactstrap";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../redux/slices/cartSlice";
 import { toast } from 'react-toastify';
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item,id,key}) => {
 
+  const {attributes,listeners,setNodeRef,transform,transition,isDragging}=useSortable({id,dragOverlay: true})
+  const style ={
+    transition,
+    transform: CSS.Transform.toString(transform),
+    opacity: isDragging ? 0.5 : 1
+
+    
+  }
   const dispatch = useDispatch();
 
   const addToCart = () => {
@@ -25,19 +35,22 @@ const ProductCard = ({ item }) => {
       })
     );
     toast.success('Product added successfully')
+   
     
   };
 
   // console.log(item)
   return (
+
     <Col lg="3" md="4">
-      <motion.div whileHover={{ scale: 0.9 }} className="product_items ">
+      <motion.div ref={setNodeRef}{...attributes}{...listeners} style={style} whileHover={{ scale: 0.9 }} className="product_items ">
         <div className="product_img">
-          <img src={item.imgUrl} alt="Chair Img" />
+       
+         <Link to={`/shop/${item.id}`}><img src={item.imgUrl} alt="Chair Img" /></Link> 
         </div>
         <div className="p-2 product_info">
-          <h3 className="product_name">
-            <Link to={`/shop/${item.id}`}>{item.productName}</Link>
+          <h3 className="product_name">{item.productName}
+            {/* <Link to={`/shop/${item.id}`}></Link> */}
           </h3>
           <span>{item.category}</span>
         </div>
